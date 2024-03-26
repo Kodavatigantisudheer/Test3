@@ -1,0 +1,38 @@
+<head>
+
+<script>
+function convert(currency){
+
+ var money;
+ if (currency == 'INR')
+ { money = document.getElementById("IN_Currency").value;
+  document.getElementById("US_Currency").value = money/65;
+  document.getElementById("UK_Currency").value = money/84.15;
+
+}
+else if (currency == 'USD')
+ {
+   money = document.getElementById("US_Currency").value;
+   document.getElementById("IN_Currency").value = money*65;
+   document.getElementById("UK_Currency").value = money/1.31;
+ }
+ else if (currency == 'UKP')
+ {
+   money = document.getElementById("UK_Currency").value;
+   document.getElementById("IN_Currency").value = money*84.15;
+   document.getElementById("US_Currency").value = money*1.31;
+ }
+
+ }
+</script>
+</head>
+ <body>
+<h3> Find our prices in INR, USD and UK-POUND </h3>
+
+IN &#x20B9; <input type"text" id="IN_Currency" onkeyup="convert('INR')">
+US &#x0024; <input type"text" id="US_Currency" onkeyup="convert('USD')">
+UK &#xa3; <input type"text" id="UK_Currency" onkeyup="convert('UKP')">
+<!-- <button onclick="convert('INR')" value="Convert">  -->
+
+</body>
+</html>
